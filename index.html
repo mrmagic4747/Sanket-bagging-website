@@ -1,6 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,21 +23,13 @@
     }
   </style>
 </head>
-<body>
-
-  <!-- Hero Section -->
-  <section class="text-center py-5 bg-black">
+<body>  <!-- Hero Section -->  <section class="text-center py-5 bg-black">
     <div class="container">
       <h1 class="display-4 highlight">Adopt Sanket for $1/Day</h1>
       <p class="lead mt-3">Your coffee money can change an Indian guy’s dinner plan.</p>
-      <a href="https://coff.ee/SanketCoder" target="_blank">
-        <button class="btn btn-warning btn-lg mt-3 fw-bold">Buy Me a Maggi for $1 🍜</button>
-      </a>
+      <button onclick="launchEmoji(); window.open('https://coff.ee/SanketCoder', '_blank');" class="btn btn-warning btn-lg mt-3 fw-bold">Buy Me a Maggi for $1 🍜</button>
     </div>
-  </section>
-
-  <!-- Currency Comparison -->
-  <section class="py-5">
+  </section>  <!-- Currency Comparison -->  <section class="py-5">
     <div class="container">
       <h2 class="text-center text-warning mb-4">What Your $1 Means in India 🇮🇳</h2>
       <div class="row g-4">
@@ -48,33 +38,28 @@
         <div class="col-md-3"><div class="card card-custom p-3">📶 1 Hour of Internet</div></div>
         <div class="col-md-3"><div class="card card-custom p-3">😭 1 Less Cry Today</div></div>
       </div>
+      <div class="text-center mt-4">
+        <h4 class="text-warning">Maggi Packs Sponsored: <span id="maggiCount">42</span></h4>
+      </div>
     </div>
-  </section>
-
-  <!-- My Story -->
-  <section class="py-5 bg-dark">
+  </section>  <!-- My Story -->  <section class="py-5 bg-dark">
     <div class="container">
       <h2 class="text-warning mb-3">Who Is Sanket?</h2>
       <p class="fs-5">
-        I'm Sanket, a young coder from Satara, India. I earn ₹8,000/month and spend it learning full-stack development, ethical hacking, and supporting my EMI-loaded family. My dream? To launch my tech startup and afford butter with my Maggi. 😭
+        I'm Sanket, a young coder from Satara, India. I earn ₹8000/month and spend it learning full-stack development, ethical hacking, and supporting my EMI-loaded family. My dream? To launch my tech startup and afford butter with my Maggi. 😭
       </p>
+      <div id="typebox" class="text-success fw-bold mt-3"></div>
     </div>
-  </section>
-
-  <!-- Meme Testimonials -->
-  <section class="py-5">
+  </section>  <!-- Meme Testimonials -->  <section class="py-5">
     <div class="container">
       <h2 class="text-warning mb-4">🌍 Real (Not Really) Testimonials</h2>
       <blockquote class="blockquote text-light mb-3">"I donated $2 and now feel like Gandhi." — Linda, New Jersey 🇺🇸</blockquote>
       <blockquote class="blockquote text-light mb-3">"Supporting Sanket made me forget my student loans." — John, Texas 🇺🇸</blockquote>
       <blockquote class="blockquote text-light">"My dollar did more here than it ever did on Amazon." — Emma, UK 🇬🇧</blockquote>
     </div>
-  </section>
-
-  <!-- Donation Tier Table -->
-  <section class="py-5 bg-dark">
+  </section>  <!-- Donation Tier Table -->  <section class="py-5 bg-dark">
     <div class="container">
-      <h2 class="text-warning mb-4 text-center">Donation Tiers & Rewards 🎁</h2>
+      <h2 class="text-warning mb-4 text-center">Donation Tiers & Rewards 🏱</h2>
       <div class="table-responsive">
         <table class="table table-bordered text-white">
           <thead>
@@ -90,27 +75,51 @@
         </table>
       </div>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="py-5 text-center">
+  </section>  <!-- Contact -->  <section class="py-5 text-center">
     <h2 class="text-warning">📬 Contact the Struggling Genius</h2>
     <p>📸 Instagram: <a href="https://www.instagram.com/_xx__sanku__xx_?igsh=dm9md2ZmdnhsbGln" target="_blank" class="text-warning">@_xx__sanku__xx_</a></p>
     <p>💬 Telegram Channel: <a href="https://t.me/hackvaultindia" target="_blank" class="text-warning">@hackvault india</a></p>
     <p>📧 Email: sanketshelar4747@gmail.com</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-center p-3 text-muted">
+  </section>  <!-- Footer -->  <footer class="bg-black text-center p-3 text-muted">
     &copy; 2025 Sanket Shelar – Digital Bhikhari with Global Dreams 💸
-  </footer>
-
-  <!-- JS Meme Alert -->
-  <script>
+  </footer>  <!-- JS Enhancements -->  <script>
+    // Reminder Alert
     setTimeout(() => {
       alert("Reminder: For just $1, you can feed a hungry coder named Sanket. Be the change 💖");
     }, 3500);
-  </script>
 
-</body>
+    // Maggi Counter
+    let count = 42;
+    setInterval(() => {
+      count++;
+      document.getElementById("maggiCount").innerText = count;
+    }, 7000);
+
+    // Emoji Animation
+    function launchEmoji() {
+      const emoji = document.createElement("div");
+      emoji.innerText = "🍜";
+      emoji.style.position = "fixed";
+      emoji.style.left = Math.random() * 90 + "%";
+      emoji.style.top = Math.random() * 90 + "%";
+      emoji.style.fontSize = "2rem";
+      emoji.style.zIndex = 9999;
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 1500);
+    }
+
+    // Typing Text
+    const text = "Hi, I'm Sanket 👋 I'm surviving on ₹8000/month. Help me buy Maggi 🙏";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typebox").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+      }
+    }
+    window.onload = typeWriter;
+  </script></body>
 </html>
+  
+
